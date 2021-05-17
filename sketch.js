@@ -68,18 +68,18 @@ function draw() {
 
    currentTime = hour();
 
-   if(currentTime === foodObj.lastFed+1){
+   if(currentTime === lastFed+1){
      foodObj.garden();
      gameState = "playing";
      updateGameState(gameState);
    }
 
-   else if(currentTime === foodObj.lastFed+2){
+   else if(currentTime === lastFed+2){
      foodObj.bedroom();
      updateGameState("sleeping");
    }
 
-   else if(currentTime>foodObj.lastFed+2 && currentTime<= foodObj.lastFed+4){
+   else if(currentTime>lastFed+2 && currentTime<= lastFed+4){
      foodObj.washroom();
      updateGameState("bathing");
    }
